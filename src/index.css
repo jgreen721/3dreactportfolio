@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --mainPaddingX: 12.5rem;
+  --black: black;
+  --white: white;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 6rem;
+}
+
+h2 {
+  font-size: 3.8rem;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+h4 {
+  font-size: 2rem;
+}
+
+h5 {
+  font-size: 1.4rem;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 850px) {
+  :root {
+    --mainPaddingX: 5.5rem;
+  }
+}
+@media screen and (max-width: 450px) {
+  :root {
+    --mainPaddingX: 1.5rem;
+  }
+}

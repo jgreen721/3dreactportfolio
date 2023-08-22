@@ -1,0 +1,18 @@
+.app[data-theme="dark"] {
+  --mainBg: var(--black);
+  --mainColor: var(--white);
+}
+
+.app[data-theme="light"] {
+  --mainBg: var(--white);
+  --mainColor: var(--black);
+}
+
+.app {
+  min-height: 100vh;
+  max-width: 144rem;
+  margin: 0 auto;
+  border: 2px solid black;
+  background: var(--mainBg);
+  color: var(--mainColor);
+}
