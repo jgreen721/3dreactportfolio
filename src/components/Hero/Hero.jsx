@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useRef } from 'react'
 import {Canvas, useFrame} from "@react-three/fiber"
-import { OrbitControls, useGLTF } from '@react-three/drei'
+import { Html, OrbitControls, useGLTF } from '@react-three/drei'
 import gsap from "gsap";
 import "./Hero.css"
 
@@ -9,11 +9,17 @@ const Laptop=()=>{
     const img = useGLTF("laptop.glb");
     const laptop = useRef();
     const lightRef = useRef();
+    const modelRef = useRef();
     const tl = useRef();
 
-        // useFrame(()=>{
+    let deltaY = .002;
 
-        // })
+        useFrame(()=>{
+          modelRef.current.position.y += deltaY;
+          if(modelRef.current.position.y > .1 || modelRef.current.position.y < -.1){
+            deltaY *= -1;
+          }
+        })
 
         useLayoutEffect(()=>{
             tl.current = gsap.timeline();
@@ -25,7 +31,15 @@ const Laptop=()=>{
     return (
       <group ref={laptop}>
         <directionalLight ref={lightRef} position={[2,-4,0]}/>
+        <group ref={modelRef}>
         <primitive scale={.1} object={img.scene}/>
+        <Html position={[-.9,1.75,0]}>
+          <div className="laptop-bg-html">
+          <h2>Hello World</h2>
+          <img src="favicon.ico" alt="" />
+          </div>
+        </Html>
+        </group>
       </group>
     )
 }
@@ -36,7 +50,13 @@ const Hero = () => {
       <div className="canvas-overlay">
         <Canvas camera={{position:[0,2,0]}} style={{height:600}}>
           <ambientLight/>
-          <OrbitControls enableZoom={false}/>
+          {/* <OrbitControls enableZoom={false}  
+                         minAzimuthAngle={-Math.PI / 4}
+                         maxAzimuthAngle={Math.PI / 4}
+                         minPolarAngle={Math.PI / 6}
+                         maxPolarAngle={Math.PI - Math.PI / 6}
+                         />   */}
+                       
 <Laptop/>
         </Canvas>
       </div>
