@@ -1,6 +1,6 @@
 import {useState} from "react"
 import './App.css'
-import {Navbar,Hero,Samples} from "./components"
+import {Navbar,Hero,Samples, Contact} from "./components"
 
 function App() {
   const [theme,setTheme] = useState("dark")
@@ -10,6 +10,7 @@ function App() {
      <Navbar/>
      <Hero/>
      <Samples/>
+     <Contact/>
     </div>
   )
 }

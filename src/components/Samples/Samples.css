@@ -1,0 +1,13 @@
+.samples-container {
+  border: 2px solid white;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.samples-h1 {
+  text-align: center;
+  color: var(--mainBg);
+  text-shadow: 0px 0px 1px var(--mainColor), 1px 1px 2px var(--mainColor),
+    1px 1px 10px var(--mainColor);
+}
